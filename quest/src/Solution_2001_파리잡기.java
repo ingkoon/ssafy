@@ -1,6 +1,3 @@
-package quest.prev;
-
-
 import java.util.Scanner;
 
 public class Solution_2001_파리잡기 {

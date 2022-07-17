@@ -1,5 +1,3 @@
-package quest.prev;
-
 import java.util.Scanner;
 
 public class Solution_1961_숫자배열회전 {
@@ -9,7 +7,9 @@ public class Solution_1961_숫자배열회전 {
 
         int T = sc.nextInt();
 
-        for (int t = 0; t < T; t++) {
+        for (int t = 1; t <= T; t++) {
+            System.out.printf("#%d%n",t);
+
             int n = sc.nextInt();
 
             int[][] arr = new int[n][n];
@@ -20,28 +20,22 @@ public class Solution_1961_숫자배열회전 {
                     arr[i][j] = sc.nextInt();
                 }
             }
-
-            // 90도 회전하였을 경우
+            // 90, 180, 270에 대한 결과를 각각 출력
             for (int i = 0; i < n; i++) {
+                int a = n -1 - i;
                 for (int j = n-1; j >= 0; j--) {
-                    System.out.println(" 90 = " + arr[j][i]);
+                    System.out.print(arr[j][i]);
                 }
-            }
-
-            // 180도 회전하였을 경우
-            for (int i = n-1; i >= 0; i--) {
+                System.out.print(" ");
                 for (int j = n-1; j >=0 ; j--) {
-                    System.out.println("180 = " + arr[i][j]);
+                    System.out.print(arr[a][j]);
                 }
-            }
-
-            // 270도 회전하였을 경우
-            for (int i = n-1; i >= 0; i--) {
+                System.out.print(" ");
                 for (int j = 0; j < n; j++) {
-                    System.out.println("arr[j][i] = " + arr[j][i]);
+                    System.out.print(arr[j][a]);
                 }
+                System.out.println();
             }
-
         }
     }
 }
